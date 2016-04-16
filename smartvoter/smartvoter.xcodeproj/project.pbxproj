@@ -21,6 +21,9 @@
 		E6C6FCDE1CC22428003E2B2D /* president in Resources */ = {isa = PBXBuildFile; fileRef = E6C6FCDC1CC22428003E2B2D /* president */; };
 		E6C6FCDF1CC22428003E2B2D /* vicepresident in Resources */ = {isa = PBXBuildFile; fileRef = E6C6FCDD1CC22428003E2B2D /* vicepresident */; };
 		E6C6FCE21CC2392B003E2B2D /* RankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C6FCE11CC2392B003E2B2D /* RankingViewController.m */; };
+		E6C6FCE51CC28381003E2B2D /* CandidatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C6FCE41CC28381003E2B2D /* CandidatesViewController.m */; };
+		E6C6FCE71CC2A5A7003E2B2D /* assets-profile-images in Resources */ = {isa = PBXBuildFile; fileRef = E6C6FCE61CC2A5A7003E2B2D /* assets-profile-images */; };
+		E6C6FCEA1CC2A68A003E2B2D /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C6FCE91CC2A68A003E2B2D /* ProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,11 @@
 		E6C6FCDD1CC22428003E2B2D /* vicepresident */ = {isa = PBXFileReference; lastKnownFileType = folder; name = vicepresident; path = JsonData/vicepresident; sourceTree = "<group>"; };
 		E6C6FCE01CC2392B003E2B2D /* RankingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingViewController.h; sourceTree = "<group>"; };
 		E6C6FCE11CC2392B003E2B2D /* RankingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingViewController.m; sourceTree = "<group>"; };
+		E6C6FCE31CC28381003E2B2D /* CandidatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandidatesViewController.h; sourceTree = "<group>"; };
+		E6C6FCE41CC28381003E2B2D /* CandidatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandidatesViewController.m; sourceTree = "<group>"; };
+		E6C6FCE61CC2A5A7003E2B2D /* assets-profile-images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "assets-profile-images"; sourceTree = "<group>"; };
+		E6C6FCE81CC2A68A003E2B2D /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		E6C6FCE91CC2A68A003E2B2D /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,10 @@
 				E6C6FCB11CC1D9D4003E2B2D /* ViewController.m */,
 				E6C6FCE01CC2392B003E2B2D /* RankingViewController.h */,
 				E6C6FCE11CC2392B003E2B2D /* RankingViewController.m */,
+				E6C6FCE31CC28381003E2B2D /* CandidatesViewController.h */,
+				E6C6FCE41CC28381003E2B2D /* CandidatesViewController.m */,
+				E6C6FCE81CC2A68A003E2B2D /* ProfileViewController.h */,
+				E6C6FCE91CC2A68A003E2B2D /* ProfileViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -139,6 +151,7 @@
 		E6C6FCDB1CC21450003E2B2D /* JsonData */ = {
 			isa = PBXGroup;
 			children = (
+				E6C6FCE61CC2A5A7003E2B2D /* assets-profile-images */,
 				E6C6FCDC1CC22428003E2B2D /* president */,
 				E6C6FCDD1CC22428003E2B2D /* vicepresident */,
 			);
@@ -207,6 +220,7 @@
 				E6C6FCBA1CC1D9D4003E2B2D /* LaunchScreen.storyboard in Resources */,
 				E6C6FCB71CC1D9D4003E2B2D /* Assets.xcassets in Resources */,
 				E6C6FCDE1CC22428003E2B2D /* president in Resources */,
+				E6C6FCE71CC2A5A7003E2B2D /* assets-profile-images in Resources */,
 				E6C6FCB51CC1D9D4003E2B2D /* Main.storyboard in Resources */,
 				E6C6FCD71CC1EE2D003E2B2D /* allIssues.json in Resources */,
 			);
@@ -223,6 +237,8 @@
 				E6C6FCB21CC1D9D4003E2B2D /* ViewController.m in Sources */,
 				E6C6FCDA1CC20900003E2B2D /* Stance.m in Sources */,
 				E6C6FCE21CC2392B003E2B2D /* RankingViewController.m in Sources */,
+				E6C6FCEA1CC2A68A003E2B2D /* ProfileViewController.m in Sources */,
+				E6C6FCE51CC28381003E2B2D /* CandidatesViewController.m in Sources */,
 				E6C6FCAF1CC1D9D4003E2B2D /* AppDelegate.m in Sources */,
 				E6C6FCD41CC1E108003E2B2D /* Issue.m in Sources */,
 				E6C6FCAC1CC1D9D4003E2B2D /* main.m in Sources */,

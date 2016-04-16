@@ -18,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UILabel *lblCountdown = [self.view viewWithTag:6666];
+    [lblCountdown setText: [self computeRemainingDays]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,6 +34,18 @@
     } else  if ([segue.identifier isEqual: @"vpSegue"]) {
         [rvc setCallPresident:NO];
     }
+}
+
+- (NSString *) computeRemainingDays {
+    NSDate *start = [NSDate date];
+    
+    NSDateFormatter *f = [[NSDateFormatter alloc] init];
+    [f setDateFormat:@"yyyy-MM-dd"];
+    NSDate *end = [f dateFromString:@"2016-05-09"]; //Election 2016
+    NSCalendar *gc = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *comp = [gc components:NSCalendarUnitDay fromDate:start toDate:end options:NSCalendarWrapComponents];
+    return [NSString stringWithFormat:@"%i", [comp day]];
+    
 }
 
 @end

@@ -18,11 +18,12 @@ UILabel *lblIssue;
 
 NSMutableArray *globalVoterStance;
 NSArray *candidatesRanking;
+int yourBaseAnswer = 21; //TODO must get from number of stances
 
 NSMutableArray *allP;
 NSMutableArray *allVP;
 
-
+UIView *progressBar;
 
 @implementation DecisionViewController
 
@@ -59,6 +60,29 @@ NSMutableArray *allVP;
     
     Issue *is = [issues objectAtIndex:0];
     [lblIssue setText:is.issue];
+    
+    
+    
+    progressBar = [self.view viewWithTag:9999];
+    CGRect startFrame = CGRectMake(progressBar.frame.origin.x, progressBar.frame.origin.y, progressBar.frame.size.width, progressBar.frame.size.height);
+    
+    [progressBar setFrame:startFrame];
+}
+
+
+- (void) setupProgressBar {
+
+
+    int increment = progressBar.frame.size.width / issues.count;
+
+    NSLog(@"[[][][][][][] %i %f %i",increment, progressBar.frame.size.width, globalVoterStance.count);
+    
+    CGRect startFrame = CGRectMake(progressBar.frame.origin.x, progressBar.frame.origin.y, progressBar.frame.size.width+increment, progressBar.frame.size.height);
+
+    [UIView animateWithDuration:0.5 animations:^{
+        [progressBar setFrame:startFrame];
+    }];
+    [self.view setNeedsDisplay];
 }
 
 - (void) populateCandidates {
@@ -123,16 +147,19 @@ NSMutableArray *allVP;
 }
 
 - (void)btnAgree:(id)obj {
+    [self setupProgressBar];
     [globalVoterStance addObject:@(SummaryAgree)];
     [self nextQuestion];
 }
 
 - (void)btnNoStance:(id)obj {
+    [self setupProgressBar];
     [globalVoterStance addObject:@(SummaryNoStance)];
     [self nextQuestion];
 }
 
 - (void)btnDisagree:(id)obj {
+    [self setupProgressBar];
     [globalVoterStance addObject:@(SummaryDisagree)];
     [self nextQuestion];
 }
@@ -181,6 +208,8 @@ NSMutableArray *allVP;
             if (candidateAnswer == voterAnswer) {
                 totalPoints++;
             }
+        } else {
+            yourBaseAnswer -= 1; //for computation data
         }
     }
     return totalPoints;
