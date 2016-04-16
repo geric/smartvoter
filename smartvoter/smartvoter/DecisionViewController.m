@@ -89,17 +89,21 @@ int roxas;
     }
  
  
-    NSArray *binayStance =   @[@1, @0, @1, @0, @1, @1, @1, @1];
-    NSArray *duterteStance = @[@1, @1, @1, @0, @1, @1, @1, @0];
-    NSArray *eliStance =     @[@0, @0, @0, @0, @0, @0, @0, @0];
-    NSArray *eliStance1 =    @[@1, @1, @1, @1, @1, @1, @1, @1];
+    NSArray *binayStance =          @[@2, @1, @2, @1, @2, @2, @2, @2];
+    NSArray *duterteStance =        @[@2, @2, @2, @1, @2, @2, @2, @1];
 
-    NSLog(@">>>>>>>>>>>>>>>>>>>>>>>>>>> points ni binay vs sayo %i", [self matchYourStance:eliStance1 ToCandidateStance:binayStance]);
-    NSLog(@">>>>>>>>>>>>>>>>>>>>>>>>>>> points ni duterte vs sayo %i", [self matchYourStance:eliStance1 ToCandidateStance:duterteStance]);
+    NSArray *eliTrueStance =        @[@2, @2, @0, @0, @2, @0, @2, @2];
+    
+    NSArray *eliNoStance =          @[@0, @0, @0, @0, @0, @0, @0, @0];
+    NSArray *eliDisagreeAllStance = @[@1, @1, @1, @1, @1, @1, @1, @1];
+    NSArray *eliAgreeAllStance =    @[@2, @2, @2, @2, @2, @2, @2, @2];
+
+    NSLog(@">>>>>>>>>>>>>>>>>>>>>>>>>>> points ni binay vs sayo %i", [self matchYourStance:eliAgreeAllStance ToCandidateStance:binayStance]);
+    NSLog(@">>>>>>>>>>>>>>>>>>>>>>>>>>> points ni duterte vs sayo %i", [self matchYourStance:eliAgreeAllStance ToCandidateStance:duterteStance]);
 }
 
 - (int)matchYourStance:(NSArray *) yourStance ToCandidateStance: (NSArray *) candidateStance {
-    int issueCount = 8;
+    int issueCount = 8; //TODO not static count
     int totalPointsNgKandidato = 0;
     for (int i = 0; i < issueCount; i++) {
         int candidateSagotSaIssue = (int)[candidateStance objectAtIndex:i];
