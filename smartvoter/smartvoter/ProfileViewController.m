@@ -20,4 +20,9 @@
     NSLog(@">>>>>>>>>>>>>>>>>>>>> %@",self.selectedCandidate.can_name);
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+}
+
 @end

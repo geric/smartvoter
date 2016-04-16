@@ -62,7 +62,8 @@ int questionCounterStart = 1;
     
     Issue *is = [issues objectAtIndex:0];
     [lblIssue setText:is.issue];
-    
+    [lblIssue.layer setCornerRadius:15.0f];
+    [lblIssue.layer setMasksToBounds:YES];
     
     
     progressBar = [self.view viewWithTag:9999];
@@ -74,6 +75,11 @@ int questionCounterStart = 1;
     
     qcounter.text = @"1 / 21";
     
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 - (void) setupProgressBar {

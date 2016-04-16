@@ -20,6 +20,13 @@
     [super viewDidLoad];
     UILabel *lblCountdown = [self.view viewWithTag:6666];
     [lblCountdown setText: [self computeRemainingDays]];
+
+//    [self.navigationController.navigationBar setTranslucent:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning {
