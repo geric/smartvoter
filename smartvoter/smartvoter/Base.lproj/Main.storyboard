@@ -149,40 +149,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" tag="111" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="issue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVj-LW-223">
-                                <rect key="frame" x="20" y="81" width="280" height="120"/>
+                                <rect key="frame" x="16" y="78" width="295" height="153"/>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="1111" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ib-07-E7W">
-                                <rect key="frame" x="-20" y="227" width="361" height="85"/>
+                                <rect key="frame" x="-3" y="301" width="327" height="81"/>
                                 <state key="normal" image="agree-normal"/>
                                 <state key="selected" image="agree-pressed"/>
                                 <state key="highlighted" image="agree-pressed"/>
                             </button>
-                            <button opaque="NO" tag="2222" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soS-7H-Vl3">
-                                <rect key="frame" x="0.0" y="320" width="317" height="121"/>
-                                <state key="normal" image="no-stance-normal"/>
-                                <state key="selected" image="no-stance-pressed"/>
-                                <state key="highlighted" image="no-stance-pressed"/>
-                            </button>
-                            <view tag="9999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7xZ-5S-P5j">
-                                <rect key="frame" x="0.0" y="531" width="320" height="37"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="123987" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4i-nz-7VT">
-                                <rect key="frame" x="173" y="386" width="30" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" tag="3333" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2l-v3-hEp">
-                                <rect key="frame" x="-3" y="430" width="327" height="93"/>
+                                <rect key="frame" x="-3" y="479" width="327" height="81"/>
                                 <state key="normal" image="disagree-normal"/>
                                 <state key="selected" image="disagree-pressed"/>
                                 <state key="highlighted" image="disagree-pressed"/>
                             </button>
+                            <button opaque="NO" tag="2222" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soS-7H-Vl3">
+                                <rect key="frame" x="-3" y="390" width="327" height="81"/>
+                                <state key="normal" image="no-stance-normal"/>
+                                <state key="selected" image="no-stance-pressed"/>
+                                <state key="highlighted" image="no-stance-pressed"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UoT-Db-WBt">
+                                <rect key="frame" x="213" y="239" width="60" height="44"/>
+                                <state key="normal" title="?"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="123987" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="21 / 21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4i-nz-7VT">
+                                <rect key="frame" x="37" y="239" width="111" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

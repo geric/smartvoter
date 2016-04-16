@@ -18,13 +18,14 @@ UILabel *lblIssue;
 
 NSMutableArray *globalVoterStance;
 NSArray *candidatesRanking;
-int yourBaseAnswer = 21; //TODO must get from number of stances
+int yourBaseAnswer = 21; //TODO must get from number of stances ; cant quantify percentage
 
 NSMutableArray *allP;
 NSMutableArray *allVP;
 
 UIView *progressBar;
 UILabel *qcounter;
+int questionCounterStart = 1;
 
 @implementation DecisionViewController
 
@@ -70,9 +71,10 @@ UILabel *qcounter;
     [progressBar setFrame:startFrame];
     
     qcounter = [self.view viewWithTag:123987];
-    qcounter.text = @"24";
+    
+    qcounter.text = @"1 / 21";
+    
 }
-
 
 - (void) setupProgressBar {
 
@@ -88,7 +90,10 @@ UILabel *qcounter;
 //    }];
 //    [self.view setNeedsDisplay];
     
-    qcounter.text = @"pug";
+    
+    NSString *text = [NSString stringWithFormat:@"%i / 21", questionCounterStart += 1];
+    qcounter.text = text;
+    
 }
 
 - (void) populateCandidates {
@@ -222,6 +227,7 @@ UILabel *qcounter;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    questionCounterStart = 1;
     if ([segue.identifier isEqual: @"rankingSegue"]) {
         RankingViewController *rvc = (RankingViewController *)[segue destinationViewController];
         [rvc setCandidatesRanking:candidatesRanking];
