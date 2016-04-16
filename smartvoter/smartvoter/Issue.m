@@ -45,10 +45,9 @@
     [issue setId:[dict valueForKey:@"id"]];
     [issue setIssue:[dict valueForKey:@"issue"]];
     [issue setShortname:[dict valueForKey:@"shortname"]];
+    [issue setCreated_at:[dict valueForKey:@"created_at"]];
+    [issue setUpdated_at:[dict valueForKey:@"updated_at"]];
     return issue;
-//    [issue setId:[dict valueForKey:@"created_at"]];
-//    [issue setId:[dict valueForKey:@"updated_at"]];
-    
 }
 
 @end

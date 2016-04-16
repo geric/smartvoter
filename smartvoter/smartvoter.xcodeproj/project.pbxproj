@@ -17,6 +17,7 @@
 		E6C6FCD11CC1E0EF003E2B2D /* Candidate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C6FCD01CC1E0EF003E2B2D /* Candidate.m */; };
 		E6C6FCD41CC1E108003E2B2D /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C6FCD31CC1E108003E2B2D /* Issue.m */; };
 		E6C6FCD71CC1EE2D003E2B2D /* allIssues.json in Resources */ = {isa = PBXBuildFile; fileRef = E6C6FCD61CC1EE2D003E2B2D /* allIssues.json */; };
+		E6C6FCDA1CC20900003E2B2D /* Stance.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C6FCD91CC20900003E2B2D /* Stance.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		E6C6FCD21CC1E108003E2B2D /* Issue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Issue.h; sourceTree = "<group>"; };
 		E6C6FCD31CC1E108003E2B2D /* Issue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Issue.m; sourceTree = "<group>"; };
 		E6C6FCD61CC1EE2D003E2B2D /* allIssues.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allIssues.json; sourceTree = "<group>"; };
+		E6C6FCD81CC20900003E2B2D /* Stance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stance.h; sourceTree = "<group>"; };
+		E6C6FCD91CC20900003E2B2D /* Stance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stance.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 				E6C6FCD01CC1E0EF003E2B2D /* Candidate.m */,
 				E6C6FCD21CC1E108003E2B2D /* Issue.h */,
 				E6C6FCD31CC1E108003E2B2D /* Issue.m */,
+				E6C6FCD81CC20900003E2B2D /* Stance.h */,
+				E6C6FCD91CC20900003E2B2D /* Stance.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			files = (
 				E6C6FCC91CC1E081003E2B2D /* DecisionViewController.m in Sources */,
 				E6C6FCB21CC1D9D4003E2B2D /* ViewController.m in Sources */,
+				E6C6FCDA1CC20900003E2B2D /* Stance.m in Sources */,
 				E6C6FCAF1CC1D9D4003E2B2D /* AppDelegate.m in Sources */,
 				E6C6FCD41CC1E108003E2B2D /* Issue.m in Sources */,
 				E6C6FCAC1CC1D9D4003E2B2D /* main.m in Sources */,
