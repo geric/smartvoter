@@ -89,14 +89,13 @@ int roxas;
     }
  
  
-    NSArray *binayStance =  @[@1, @0, @1, @1, @1, @1, @1, @1];
-    NSArray *duterteStance =  @[@1, @1, @1, @0, @1, @1, @1, @0];
-    NSArray *eliStance = @[@1, @0, @1, @1, @1, @1, @1, @1];
+    NSArray *binayStance =   @[@1, @0, @1, @0, @1, @1, @1, @1];
+    NSArray *duterteStance = @[@1, @1, @1, @0, @1, @1, @1, @0];
+    NSArray *eliStance =     @[@0, @0, @0, @0, @0, @0, @0, @0];
+    NSArray *eliStance1 =    @[@1, @1, @1, @1, @1, @1, @1, @1];
 
-    [self matchYourStance:eliStance ToCandidateStance:binayStance];
-    
-
-    
+    NSLog(@">>>>>>>>>>>>>>>>>>>>>>>>>>> points ni binay vs sayo %i", [self matchYourStance:eliStance1 ToCandidateStance:binayStance]);
+    NSLog(@">>>>>>>>>>>>>>>>>>>>>>>>>>> points ni duterte vs sayo %i", [self matchYourStance:eliStance1 ToCandidateStance:duterteStance]);
 }
 
 - (int)matchYourStance:(NSArray *) yourStance ToCandidateStance: (NSArray *) candidateStance {
