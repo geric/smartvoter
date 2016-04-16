@@ -8,6 +8,7 @@
 
 #import "DecisionViewController.h"
 #import "Issue.h"
+#import "Stance.h"
 
 int issueCounter;
 NSArray *issues;
@@ -19,6 +20,8 @@ int defensorSantiago;
 int poe;
 int roxas;
 
+NSMutableArray *globalVoterStance;
+
 @implementation DecisionViewController
 
 //TODO: enum of answer
@@ -28,9 +31,12 @@ int roxas;
     [super viewDidLoad];
     
     
-    //TODO: alisin
-    [self evaluate:0 :0];
-    
+//    globalVoterStance = @[
+//                    @(SummaryAgree), @(SummaryAgree), @(SummaryAgree), @(SummaryAgree), @(SummaryAgree), @(SummaryAgree), @(SummaryAgree),
+//                    @(SummaryAgree), @(SummaryAgree), @(SummaryAgree), @(SummaryAgree), @(SummaryAgree), @(SummaryAgree), @(SummaryAgree),
+//                    @(SummaryAgree), @(SummaryAgree), @(SummaryAgree), @(SummaryAgree), @(SummaryAgree), @(SummaryAgree), @(SummaryAgree)
+//                ];
+    globalVoterStance = [[NSMutableArray alloc] init];
     
     
     issueCounter = 0;
@@ -56,14 +62,17 @@ int roxas;
 }
 
 - (void)btnAgree:(id)obj {
+    [globalVoterStance addObject:@(SummaryAgree)];
     [self nextQuestion];
 }
 
 - (void)btnNoStance:(id)obj {
+    [globalVoterStance addObject:@(SummaryNoStance)];
     [self nextQuestion];
 }
 
 - (void)btnDisagree:(id)obj {
+    [globalVoterStance addObject:@(SummaryDisagree)];
     [self nextQuestion];
 }
 
@@ -72,57 +81,57 @@ int roxas;
     if (issueCounter < issues.count) {
         [lblIssue setText:[[issues objectAtIndex:issueCounter] issue]];
     } else {
-        NSLog(@">>>>>>>>>> EVALUATE");
+        NSLog(@">>>>>>>>>> EVALUATE %i", issueCounter);
+        
+        
+        NSArray *binayStance = [self getStanceArrayForPath:@"president/1binayStance"];
+        NSArray *santiagoStance = [self getStanceArrayForPath:@"president/2santiagoStance"];
+        NSArray *duterteStance = [self getStanceArrayForPath:@"president/3duterteStance"];
+        NSArray *poeStance = [self getStanceArrayForPath:@"president/4poeStance"];
+        NSArray *roxasStance = [self getStanceArrayForPath:@"president/5roxasStance"];
+        
+        int binayPoints = [self matchYourStance:[globalVoterStance copy] ToCandidateStance:binayStance];
+        NSLog(@">>>>>>>>>>>>>>>>>> binay %i", binayPoints);
+        
+        int santiagoPoints = [self matchYourStance:[globalVoterStance copy] ToCandidateStance:santiagoStance];
+        NSLog(@">>>>>>>>>>>>>>>>>> santiago %i", santiagoPoints);
+//
+//        int dp = [self matchYourStance:globalVoterStance ToCandidateStance:duterteStance];
+//        NSLog(@">>>>>>>>>>>>>>>>>> duterte %i", dp);
+//        
+//        int pp = [self matchYourStance:globalVoterStance ToCandidateStance:poeStance];
+//        NSLog(@">>>>>>>>>>>>>>>>>> poe %i", pp);
+//        
+//        int rp = [self matchYourStance:globalVoterStance ToCandidateStance:roxasStance];
+//        NSLog(@">>>>>>>>>>>>>>>>>> roxas %i", rp);
+        
+        
+        
     }
     
 }
 
-- (void)evaluate:(int)indexOfIssue :(int)answer {
-    Issue *issue = [issues objectAtIndex:indexOfIssue];
-    
-    if (answer == 1) { //NO
-        
-    } else if (answer == 2) { //YES
-    
-    } else if (answer == 3) { //NO STANCE
-        
-    }
- 
- 
-    NSArray *binayStance =          @[@2, @1, @2, @1, @2, @2, @2, @2];
-    NSArray *duterteStance =        @[@2, @2, @2, @1, @2, @2, @2, @1];
-
-    NSArray *eliTrueStance =        @[@2, @2, @0, @0, @2, @0, @2, @2];
-    
-    NSArray *eliNoStance =          @[@0, @0, @0, @0, @0, @0, @0, @0];
-    NSArray *eliDisagreeAllStance = @[@1, @1, @1, @1, @1, @1, @1, @1];
-    NSArray *eliAgreeAllStance =    @[@2, @2, @2, @2, @2, @2, @2, @2];
-
-    NSLog(@">>>>>>>>>>>>>>>>>>>>>>>>>>> points ni binay vs sayo %i", [self matchYourStance:eliAgreeAllStance ToCandidateStance:binayStance]);
-    NSLog(@">>>>>>>>>>>>>>>>>>>>>>>>>>> points ni duterte vs sayo %i", [self matchYourStance:eliAgreeAllStance ToCandidateStance:duterteStance]);
+- (NSArray *)getStanceArrayForPath:(NSString *)path {
+    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:path ofType:@"json"];
+    NSData *data = [[NSData alloc] initWithContentsOfFile:jsonPath];
+    NSArray *stance = [[[Stance alloc] init] getAllFromData:data];
+    return stance;
 }
 
-- (int)matchYourStance:(NSArray *) yourStance ToCandidateStance: (NSArray *) candidateStance {
-    int issueCount = 8; //TODO not static count
-    int totalPointsNgKandidato = 0;
-    for (int i = 0; i < issueCount; i++) {
-        int candidateSagotSaIssue = (int)[candidateStance objectAtIndex:i];
-        int yourSagotSaIssue = (int)[yourStance objectAtIndex:i];
+- (int)matchYourStance:(NSArray *) voterStance ToCandidateStance: (NSArray *) candidateStance {
+    int totalPoints = 0;
+    
+    for (int i = 0; i < issues.count; i++) {
+        SummaryType candidateAnswer = (SummaryType)[[candidateStance objectAtIndex:i] summary];
+        SummaryType voterAnswer = [[voterStance objectAtIndex:i] integerValue];
         
-        //TODO: lagyan ng if kapag no stance
-        
-        if (yourSagotSaIssue != 0) { //TODO ENUM DAPAT NOSTANCE
-            if (candidateSagotSaIssue == yourSagotSaIssue) {
-                NSLog(@"binay 1 point gryffindor");
-                totalPointsNgKandidato++;
+        if (voterAnswer != SummaryNoStance) {
+            if (candidateAnswer == voterAnswer) {
+                totalPoints++;
             }
         }
     }
-    return totalPointsNgKandidato;
-}
-
-- (void)vote: (BOOL)b :(BOOL)s :(BOOL)d :(BOOL)p :(BOOL)m {
-        NSLog(@">>>>>>>>>> %@",lblIssue.text);
+    return totalPoints;
 }
 
 @end

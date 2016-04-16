@@ -18,6 +18,8 @@
 		E6C6FCD41CC1E108003E2B2D /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C6FCD31CC1E108003E2B2D /* Issue.m */; };
 		E6C6FCD71CC1EE2D003E2B2D /* allIssues.json in Resources */ = {isa = PBXBuildFile; fileRef = E6C6FCD61CC1EE2D003E2B2D /* allIssues.json */; };
 		E6C6FCDA1CC20900003E2B2D /* Stance.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C6FCD91CC20900003E2B2D /* Stance.m */; };
+		E6C6FCDE1CC22428003E2B2D /* president in Resources */ = {isa = PBXBuildFile; fileRef = E6C6FCDC1CC22428003E2B2D /* president */; };
+		E6C6FCDF1CC22428003E2B2D /* vicepresident in Resources */ = {isa = PBXBuildFile; fileRef = E6C6FCDD1CC22428003E2B2D /* vicepresident */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		E6C6FCD61CC1EE2D003E2B2D /* allIssues.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allIssues.json; sourceTree = "<group>"; };
 		E6C6FCD81CC20900003E2B2D /* Stance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stance.h; sourceTree = "<group>"; };
 		E6C6FCD91CC20900003E2B2D /* Stance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stance.m; sourceTree = "<group>"; };
+		E6C6FCDC1CC22428003E2B2D /* president */ = {isa = PBXFileReference; lastKnownFileType = folder; name = president; path = JsonData/president; sourceTree = "<group>"; };
+		E6C6FCDD1CC22428003E2B2D /* vicepresident */ = {isa = PBXFileReference; lastKnownFileType = folder; name = vicepresident; path = JsonData/vicepresident; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 		E6C6FCDB1CC21450003E2B2D /* JsonData */ = {
 			isa = PBXGroup;
 			children = (
+				E6C6FCDC1CC22428003E2B2D /* president */,
+				E6C6FCDD1CC22428003E2B2D /* vicepresident */,
 			);
 			name = JsonData;
 			sourceTree = "<group>";
@@ -192,8 +198,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6C6FCDF1CC22428003E2B2D /* vicepresident in Resources */,
 				E6C6FCBA1CC1D9D4003E2B2D /* LaunchScreen.storyboard in Resources */,
 				E6C6FCB71CC1D9D4003E2B2D /* Assets.xcassets in Resources */,
+				E6C6FCDE1CC22428003E2B2D /* president in Resources */,
 				E6C6FCB51CC1D9D4003E2B2D /* Main.storyboard in Resources */,
 				E6C6FCD71CC1EE2D003E2B2D /* allIssues.json in Resources */,
 			);
