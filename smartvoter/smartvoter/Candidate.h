@@ -10,4 +10,9 @@
 
 @interface Candidate : NSObject
 
+@property (strong, nonatomic) NSString *can_id;
+@property (strong, nonatomic) NSString *can_name;
+@property (strong, nonatomic) NSString *running_position;
+@property int pointsFromVoter;
+
 @end

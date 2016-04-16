@@ -20,6 +20,7 @@
 		E6C6FCDA1CC20900003E2B2D /* Stance.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C6FCD91CC20900003E2B2D /* Stance.m */; };
 		E6C6FCDE1CC22428003E2B2D /* president in Resources */ = {isa = PBXBuildFile; fileRef = E6C6FCDC1CC22428003E2B2D /* president */; };
 		E6C6FCDF1CC22428003E2B2D /* vicepresident in Resources */ = {isa = PBXBuildFile; fileRef = E6C6FCDD1CC22428003E2B2D /* vicepresident */; };
+		E6C6FCE21CC2392B003E2B2D /* RankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C6FCE11CC2392B003E2B2D /* RankingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		E6C6FCD91CC20900003E2B2D /* Stance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stance.m; sourceTree = "<group>"; };
 		E6C6FCDC1CC22428003E2B2D /* president */ = {isa = PBXFileReference; lastKnownFileType = folder; name = president; path = JsonData/president; sourceTree = "<group>"; };
 		E6C6FCDD1CC22428003E2B2D /* vicepresident */ = {isa = PBXFileReference; lastKnownFileType = folder; name = vicepresident; path = JsonData/vicepresident; sourceTree = "<group>"; };
+		E6C6FCE01CC2392B003E2B2D /* RankingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingViewController.h; sourceTree = "<group>"; };
+		E6C6FCE11CC2392B003E2B2D /* RankingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 				E6C6FCC81CC1E081003E2B2D /* DecisionViewController.m */,
 				E6C6FCB01CC1D9D4003E2B2D /* ViewController.h */,
 				E6C6FCB11CC1D9D4003E2B2D /* ViewController.m */,
+				E6C6FCE01CC2392B003E2B2D /* RankingViewController.h */,
+				E6C6FCE11CC2392B003E2B2D /* RankingViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 				E6C6FCC91CC1E081003E2B2D /* DecisionViewController.m in Sources */,
 				E6C6FCB21CC1D9D4003E2B2D /* ViewController.m in Sources */,
 				E6C6FCDA1CC20900003E2B2D /* Stance.m in Sources */,
+				E6C6FCE21CC2392B003E2B2D /* RankingViewController.m in Sources */,
 				E6C6FCAF1CC1D9D4003E2B2D /* AppDelegate.m in Sources */,
 				E6C6FCD41CC1E108003E2B2D /* Issue.m in Sources */,
 				E6C6FCAC1CC1D9D4003E2B2D /* main.m in Sources */,

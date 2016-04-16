@@ -17,11 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMP-Jr-qNC">
-                                <rect key="frame" x="136" y="195" width="48" height="30"/>
-                                <state key="normal" title="Decide"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMf-pz-hsR">
+                                <rect key="frame" x="85" y="269" width="151" height="30"/>
+                                <state key="normal" title="Decide Vice President"/>
                                 <connections>
-                                    <segue destination="7oY-z8-MLA" kind="show" id="Tho-sM-QlZ"/>
+                                    <segue destination="7oY-z8-MLA" kind="show" identifier="vpSegue" id="nk5-la-8VC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMP-Jr-qNC">
+                                <rect key="frame" x="102" y="219" width="117" height="30"/>
+                                <state key="normal" title="Decide President"/>
+                                <connections>
+                                    <segue destination="7oY-z8-MLA" kind="show" identifier="pSegue" id="Tho-sM-QlZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -72,10 +79,41 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="AMf-HH-Jb5" kind="show" identifier="rankingSegue" id="w1b-4p-Pst"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozt-Ph-39M" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="742" y="103"/>
+        </scene>
+        <!--Ranking View Controller-->
+        <scene sceneID="CUw-Hr-Dps">
+            <objects>
+                <viewController id="AMf-HH-Jb5" customClass="RankingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BU7-UK-b01"/>
+                        <viewControllerLayoutGuide type="bottom" id="gWQ-vs-4PS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Hf-Mc-3cV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="4444" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ranking:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkB-gJ-i4k">
+                                <rect key="frame" x="79" y="103" width="254" height="247"/>
+                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AJp-c5-rGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1153.5" y="152.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YCo-mT-RiJ">
@@ -97,4 +135,7 @@
             <point key="canvasLocation" x="-88" y="103"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Tho-sM-QlZ"/>
+    </inferredMetricsTieBreakers>
 </document>

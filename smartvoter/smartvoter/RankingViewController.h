@@ -1,5 +1,5 @@
 //
-//  DecisionViewController.h
+//  RankingViewController.h
 //  smartvoter
 //
 //  Created by geric encarnacion on 16/4/16.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DecisionViewController : UIViewController
+@interface RankingViewController : UIViewController
 
-@property BOOL callPresident;
+@property (strong, nonatomic) NSArray *candidatesRanking;
 
 @end
