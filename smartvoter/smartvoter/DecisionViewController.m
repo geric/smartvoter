@@ -24,6 +24,7 @@ NSMutableArray *allP;
 NSMutableArray *allVP;
 
 UIView *progressBar;
+UILabel *qcounter;
 
 @implementation DecisionViewController
 
@@ -67,22 +68,27 @@ UIView *progressBar;
     CGRect startFrame = CGRectMake(progressBar.frame.origin.x, progressBar.frame.origin.y, progressBar.frame.size.width, progressBar.frame.size.height);
     
     [progressBar setFrame:startFrame];
+    
+    qcounter = [self.view viewWithTag:123987];
+    qcounter.text = @"24";
 }
 
 
 - (void) setupProgressBar {
 
 
-    int increment = progressBar.frame.size.width / issues.count;
-
-    NSLog(@"[[][][][][][] %i %f %i",increment, progressBar.frame.size.width, globalVoterStance.count);
+//    int increment = progressBar.frame.size.width / issues.count;
+//    
+//    NSLog(@"[[][][][][][] %i %f %i",increment, progressBar.frame.size.width, globalVoterStance.count);
+//    
+//    CGRect startFrame = CGRectMake(progressBar.frame.origin.x, progressBar.frame.origin.y, progressBar.frame.size.width+increment, progressBar.frame.size.height);
+//
+//    [UIView animateWithDuration:0.5 animations:^{
+//        [progressBar setFrame:startFrame];
+//    }];
+//    [self.view setNeedsDisplay];
     
-    CGRect startFrame = CGRectMake(progressBar.frame.origin.x, progressBar.frame.origin.y, progressBar.frame.size.width+increment, progressBar.frame.size.height);
-
-    [UIView animateWithDuration:0.5 animations:^{
-        [progressBar setFrame:startFrame];
-    }];
-    [self.view setNeedsDisplay];
+    qcounter.text = @"pug";
 }
 
 - (void) populateCandidates {
