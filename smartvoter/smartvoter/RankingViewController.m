@@ -9,9 +9,9 @@
 #import "RankingViewController.h"
 #import "Candidate.h"
 
-@implementation RankingViewController
+NSOrderedSet *set;
 
-//@synthesize candidatesRanking;
+@implementation RankingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -20,13 +20,47 @@
     [lblRanking setLineBreakMode:NSLineBreakByWordWrapping];
     [lblRanking setNumberOfLines:0];
     
-    NSString *newString;
+    UITableView *tblRanking =[self.view viewWithTag:5555];
+    [tblRanking setDelegate:self];
+    [tblRanking setDataSource:self];
+
+    for (Candidate *c in self.candidatesRanking) {
+        NSLog(@"+++++++++++++++++++ %i", c.pointsFromVoter);
+    }
+    
+}
+
+- (int)rowCount {
+    NSMutableArray *uniqueIndexes = [[NSMutableArray alloc] init];
     for (int i = 0; i < self.candidatesRanking.count; i++) {
         Candidate *candidate = (Candidate *)[self.candidatesRanking objectAtIndex:i];
-        newString = [NSString stringWithFormat:@"%i\n",candidate.pointsFromVoter];
-        NSLog(@"Candidates points %i", candidate.pointsFromVoter);
+        [uniqueIndexes addObject:[NSNumber numberWithInt:candidate.pointsFromVoter]];
     }
-    [lblRanking setText:newString];
+    set = [NSOrderedSet orderedSetWithArray:uniqueIndexes];
+    return [[set array] count];
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self rowCount];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *identifier = @"cellIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    
+    for (int i=0; i < self.candidatesRanking.count; i++) {
+        Candidate *candidate = [self.candidatesRanking objectAtIndex:i];
+        if ([NSNumber numberWithInt:candidate.pointsFromVoter] == [set objectAtIndex:indexPath.row]) {
+            NSString *names = [NSString stringWithFormat:@"%@ %@", cell.textLabel.text, candidate.can_name];
+            cell.textLabel.text = names;
+        }
+        
+    }
+    return cell;
+}
+
 
 @end

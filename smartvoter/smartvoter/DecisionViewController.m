@@ -17,7 +17,7 @@ NSArray *issues;
 UILabel *lblIssue;
 
 NSMutableArray *globalVoterStance;
-NSMutableArray *candidatesRanking;
+NSArray *candidatesRanking;
 
 NSMutableArray *allP;
 NSMutableArray *allVP;
@@ -142,22 +142,20 @@ NSMutableArray *allVP;
     if (issueCounter < issues.count) {
         [lblIssue setText:[[issues objectAtIndex:issueCounter] issue]];
     } else {
-        NSLog(@">>>>>>>>>> EVALUATE %i", issueCounter);
-        
-        candidatesRanking = [[NSMutableArray alloc] init];
 
-//        NSMutableArray *getStancesOfPresidents = [[NSMutableArray alloc] init];
-        
         NSArray *candidates = self.callPresident ? allP : allVP;
         for (int i = 0; i < candidates.count; i++) {
             Candidate *candidate = [candidates objectAtIndex:i];
-            
             NSArray *stanceArray = [self getStanceArrayForCandidate:candidate];
-            int points = [self matchYourStance:[globalVoterStance copy] ToCandidateStance:stanceArray];
+            int points = [self matchVoterStance:[globalVoterStance copy] ToCandidateStance:stanceArray];
             [candidate setPointsFromVoter:points];
-            NSLog(@">>>>>>>>>> POINTS %i", points);
         }
         
+        // sort
+        NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"pointsFromVoter" ascending:NO]];
+        candidatesRanking = [candidates sortedArrayUsingDescriptors:sortDescriptors];
+     
+        [self performSegueWithIdentifier:@"rankingSegue" sender:self];
     }
     
 }
@@ -172,7 +170,7 @@ NSMutableArray *allVP;
     return stance;
 }
 
-- (int)matchYourStance:(NSArray *) voterStance ToCandidateStance: (NSArray *) candidateStance {
+- (int)matchVoterStance:(NSArray *) voterStance ToCandidateStance: (NSArray *) candidateStance {
     int totalPoints = 0;
     
     for (int i = 0; i < issues.count; i++) {
@@ -191,7 +189,7 @@ NSMutableArray *allVP;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqual: @"rankingSegue"]) {
         RankingViewController *rvc = (RankingViewController *)[segue destinationViewController];
-        [rvc setCandidatesRanking:[candidatesRanking copy]];
+        [rvc setCandidatesRanking:candidatesRanking];
     }
 }
 

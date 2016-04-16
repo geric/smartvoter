@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RankingViewController : UIViewController
+@interface RankingViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSArray *candidatesRanking;
 
