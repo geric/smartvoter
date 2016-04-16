@@ -121,9 +121,17 @@
 		E6C6FCD51CC1EE13003E2B2D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E6C6FCDB1CC21450003E2B2D /* JsonData */,
 				E6C6FCD61CC1EE2D003E2B2D /* allIssues.json */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		E6C6FCDB1CC21450003E2B2D /* JsonData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = JsonData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
