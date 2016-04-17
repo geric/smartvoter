@@ -109,40 +109,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMP-Jr-qNC">
-                                <rect key="frame" x="101" y="340" width="117" height="30"/>
-                                <state key="normal" title="Decide President"/>
-                                <connections>
-                                    <segue destination="7oY-z8-MLA" kind="show" identifier="pSegue" id="Tho-sM-QlZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMf-pz-hsR">
-                                <rect key="frame" x="82" y="373" width="151" height="30"/>
-                                <state key="normal" title="Decide Vice President"/>
-                                <connections>
-                                    <segue destination="7oY-z8-MLA" kind="show" identifier="vpSegue" id="nk5-la-8VC"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="Fu6-qv-LpQ">
+                                <rect key="frame" x="31" y="29" width="258" height="178"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="6666" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="21" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlk-A1-HX4">
+                                <rect key="frame" x="117" y="76" width="96" height="84"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="68"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Days before Election 2016" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9SZ-lF-F7f">
+                                <rect key="frame" x="20" y="145" width="292" height="146"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="24"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hSn-QJ-1xk">
+                                <rect key="frame" x="0.0" y="403" width="159" height="165"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="TMP-Jr-qNC">
+                                        <rect key="frame" x="13" y="45" width="131" height="76"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <state key="normal" title="Choose your President">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="7oY-z8-MLA" kind="show" identifier="pSegue" id="Tho-sM-QlZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5PE-94-fBt">
+                                <rect key="frame" x="156" y="403" width="164" height="165"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="AMf-pz-hsR">
+                                        <rect key="frame" x="29" y="49" width="118" height="67"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <state key="normal" title="Choose your Vice President">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="7oY-z8-MLA" kind="show" identifier="vpSegue" id="nk5-la-8VC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="malacanang" translatesAutoresizingMaskIntoConstraints="NO" id="9qm-OQ-vUv">
+                                <rect key="frame" x="-1" y="315" width="320" height="92"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMd-sv-J62">
-                                <rect key="frame" x="82" y="411" width="154" height="30"/>
-                                <state key="normal" title="Know your Candidates"/>
+                                <rect key="frame" x="63" y="256" width="193" height="35"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.78823529411764703" blue="0.074509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <state key="normal" title="Know your Candidates">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="qqL-Ri-v3i" kind="show" id="ghI-as-OK7"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="Fu6-qv-LpQ">
-                                <rect key="frame" x="-34" y="71" width="258" height="178"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Days before Election 2016" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9SZ-lF-F7f">
-                                <rect key="frame" x="165" y="103" width="142" height="146"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="24"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="6666" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlk-A1-HX4">
-                                <rect key="frame" x="53" y="118" width="96" height="84"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="68"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -314,11 +339,12 @@
         <image name="bulb-pressed" width="58" height="66"/>
         <image name="disagree-normal" width="313" height="85"/>
         <image name="disagree-pressed" width="313" height="85"/>
+        <image name="malacanang" width="367" height="106"/>
         <image name="no-stance-normal" width="313" height="85"/>
         <image name="no-stance-pressed" width="313" height="85"/>
         <image name="sun" width="1000" height="1000"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Tho-sM-QlZ"/>
+        <segue reference="nk5-la-8VC"/>
     </inferredMetricsTieBreakers>
 </document>
