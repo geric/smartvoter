@@ -15,6 +15,7 @@
 int issueCounter;
 NSArray *issues;
 UILabel *lblIssue;
+UIView *infoView;
 
 NSMutableArray *globalVoterStance;
 NSArray *candidatesRanking;
@@ -80,7 +81,31 @@ int questionCounterStart = 1;
     qcounter = [self.view viewWithTag:123987];
     
     qcounter.text = @"1 / 21";
-    
+    [self setupInfoView];
+}
+
+- (void)setupInfoView {
+    infoView = [self.view viewWithTag:778];
+    [infoView.layer setCornerRadius:15.0f];
+    [infoView.layer setMasksToBounds:YES];
+    UIButton *infoButton = [self.view viewWithTag:779];
+    [infoButton addTarget:self action:@selector(btnInfo:) forControlEvents:UIControlEventTouchUpInside];
+//    [UIView animateWithDuration:.2f animations:^{
+        [infoView setHidden:YES];
+  //  }];
+
+}
+
+- (void)btnInfo:(id)obj {
+    if (infoView.isHidden) {
+        [UIView animateWithDuration:1 animations:^{
+            [infoView setHidden:NO];
+        }];
+    } else {
+        [UIView animateWithDuration:1 animations:^{
+            [infoView setHidden:YES];
+        }];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
