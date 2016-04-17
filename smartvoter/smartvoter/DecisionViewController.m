@@ -38,6 +38,15 @@ int questionCounterStart = 1;
 //                    @(SummaryAgree), @(SummaryAgree), @(SummaryAgree), @(SummaryAgree), @(SummaryAgree), @(SummaryAgree), @(SummaryAgree)
 //                ];
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+//    globalVoterStance = nil;
+    questionCounterStart = 1;
+//    issueCounter = 0;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -109,10 +118,6 @@ int questionCounterStart = 1;
     [self.view setNeedsDisplay];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO];
-}
 
 - (void) setupProgressBar {
 

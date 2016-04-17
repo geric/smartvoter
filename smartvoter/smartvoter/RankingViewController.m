@@ -27,8 +27,14 @@ NSOrderedSet *set;
     for (Candidate *c in self.candidatesRanking) {
         NSLog(@"+++++++++++++++++++ %i %@", c.pointsFromVoter, c.can_name);
     }
-    
 }
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+
 
 - (int)rowCount {
     NSMutableArray *uniqueIndexes = [[NSMutableArray alloc] init];
@@ -89,6 +95,9 @@ NSOrderedSet *set;
                 [canImgView setImage:[UIImage imageNamed:name]];
 //                [test1 addObject:canImgView];
                 [cell addSubview:canImgView];
+                
+                [canImgView.layer setCornerRadius:15.0f];
+                [canImgView.layer setMasksToBounds:YES];
                 
                 NSLog(@"indexpath r0w :%@", cgFloats[i]);
             }
