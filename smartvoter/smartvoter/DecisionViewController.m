@@ -98,7 +98,7 @@ int questionCounterStart = 1;
 
 - (void)btnInfo:(id)obj {
     if (infoView.isHidden) {
-        [UIView animateWithDuration:1 animations:^{
+        [UIView animateWithDuration:0.5 animations:^{
             [infoView setHidden:NO];
         }];
     } else {
@@ -106,6 +106,7 @@ int questionCounterStart = 1;
             [infoView setHidden:YES];
         }];
     }
+    [self.view setNeedsDisplay];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

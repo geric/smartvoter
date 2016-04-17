@@ -60,21 +60,42 @@ NSOrderedSet *set;
 //    cell.textLabel.text = names;
 //    return cell;
     
+
+    
+    
     /** print same values on same cell **/
     
     NSMutableArray* test1 = [[NSMutableArray alloc] init];
+//    CGSize cellSize = cell.frame.size;
+//    CGPoint cellPoint = cell.frame.size
+//    
+//    
+//    CGSizeMake(cell.frame.  self.candidatesRanking.count, 60.0f);
+    
+    NSArray *cgFloats = @[@0.0f, @1.0f, @2.0f, @3.0f, @4.0f, @5.0f];
+
     
     for (int i=0; i < self.candidatesRanking.count; i++) {
         Candidate *candidate = [self.candidatesRanking objectAtIndex:i];
             NSLog(@"PUGS candidate: %@ %i VS %@ ", candidate.can_name,candidate.pointsFromVoter,  [set objectAtIndex:indexPath.row]);
             if ([[NSNumber numberWithInt:candidate.pointsFromVoter] integerValue] == [[set objectAtIndex:indexPath.row] integerValue]) {
-                [test1 addObject:[NSString stringWithFormat:@"%@", candidate.can_name]];
+                //[test1 addObject:[NSString stringWithFormat:@"%@", candidate.can_name]];
                 NSLog(@"pugs %@ may nagtugma! s points", candidate.can_name);
+                
+//                UIImageView *canImgView = [[UIImageView alloc] initWithFrame:CGRectMake((float) indexPath.row*20.0, 8.0, 60.0, 60.0)];
+
+               UIImageView *canImgView = [[UIImageView alloc] initWithFrame:CGRectMake([[cgFloats objectAtIndex:i] floatValue]*50.0, 8.0, 60.0, 60.0)];
+                NSString *name = [NSString stringWithFormat:@"%@-p.jpg", candidate.can_id];
+                [canImgView setImage:[UIImage imageNamed:name]];
+//                [test1 addObject:canImgView];
+                [cell addSubview:canImgView];
+                
+                NSLog(@"indexpath r0w :%@", cgFloats[i]);
             }
     }
     
-    NSString *combined = [test1 componentsJoinedByString:@","];
-    cell.textLabel.text = combined;
+//    NSString *combined = [test1 componentsJoinedByString:@","];
+//    cell.textLabel.text = combined;
     return cell;
 }
 
