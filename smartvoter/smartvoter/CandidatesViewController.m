@@ -144,4 +144,10 @@ Candidate *selectedCandidate;
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+}
+
+
 @end
