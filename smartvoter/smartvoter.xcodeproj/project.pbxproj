@@ -24,6 +24,7 @@
 		E6C6FCE51CC28381003E2B2D /* CandidatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C6FCE41CC28381003E2B2D /* CandidatesViewController.m */; };
 		E6C6FCE71CC2A5A7003E2B2D /* assets-profile-images in Resources */ = {isa = PBXBuildFile; fileRef = E6C6FCE61CC2A5A7003E2B2D /* assets-profile-images */; };
 		E6C6FCEA1CC2A68A003E2B2D /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C6FCE91CC2A68A003E2B2D /* ProfileViewController.m */; };
+		E6C6FCEC1CC31B5F003E2B2D /* profile in Resources */ = {isa = PBXBuildFile; fileRef = E6C6FCEB1CC31B5F003E2B2D /* profile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		E6C6FCE61CC2A5A7003E2B2D /* assets-profile-images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "assets-profile-images"; sourceTree = "<group>"; };
 		E6C6FCE81CC2A68A003E2B2D /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		E6C6FCE91CC2A68A003E2B2D /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		E6C6FCEB1CC31B5F003E2B2D /* profile */ = {isa = PBXFileReference; lastKnownFileType = folder; path = profile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 		E6C6FCDB1CC21450003E2B2D /* JsonData */ = {
 			isa = PBXGroup;
 			children = (
+				E6C6FCEB1CC31B5F003E2B2D /* profile */,
 				E6C6FCE61CC2A5A7003E2B2D /* assets-profile-images */,
 				E6C6FCDC1CC22428003E2B2D /* president */,
 				E6C6FCDD1CC22428003E2B2D /* vicepresident */,
@@ -216,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6C6FCEC1CC31B5F003E2B2D /* profile in Resources */,
 				E6C6FCDF1CC22428003E2B2D /* vicepresident in Resources */,
 				E6C6FCBA1CC1D9D4003E2B2D /* LaunchScreen.storyboard in Resources */,
 				E6C6FCB71CC1D9D4003E2B2D /* Assets.xcassets in Resources */,

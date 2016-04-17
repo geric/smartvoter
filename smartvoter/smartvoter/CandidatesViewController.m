@@ -115,12 +115,15 @@ Candidate *selectedCandidate;
         data = [[NSArray alloc] initWithArray:allVPres.copy];
     }
     
-    UIButton *button = [cell viewWithTag:121212];
-    [button setTitle:[[data objectAtIndex:indexPath.row] can_name] forState:UIControlStateNormal];
+    Candidate *candidate = [data objectAtIndex:indexPath.row];
+//    UIButton *button = [cell viewWithTag:121212];
+//    [button setTitle: candidate.can_name forState:UIControlStateNormal];
     
     
-    //UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:100];
-    //recipeImageView.image = [UIImage imageNamed:[recipeImageView objectAtIndex:indexPath.row]];
+    UIImageView *canImgView = (UIImageView *)[cell viewWithTag:771];
+    NSString *imgName = [NSString stringWithFormat:@"%@-p", candidate.can_id];
+    NSLog(@">>>>>>>>>>> %@", imgName);
+    canImgView.image = [UIImage imageNamed:imgName];
     
     return cell;
     
@@ -147,6 +150,30 @@ Candidate *selectedCandidate;
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *reusableview = nil;
+
+    
+    if (kind == UICollectionElementKindSectionHeader) {
+        UIView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+        UILabel *lblSectionLabel = [headerView viewWithTag:775];
+        
+        NSString *title;
+        if (indexPath.section == 0) {
+            title = @"Presidential Candidates";
+        } else if(indexPath.section == 1) {
+            title = @"Vice Presidential Candidates";
+        }
+        [lblSectionLabel setText:title];
+        
+        reusableview = headerView;
+    }
+    
+    
+    return reusableview;
 }
 
 
