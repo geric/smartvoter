@@ -39,6 +39,12 @@ int questionCounterStart = 1;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (self.callPresident) {
+        [self setTitle:@"President"];
+    } else {
+        [self setTitle:@"Vice President"];
+    }
 
     globalVoterStance = [[NSMutableArray alloc] init];
     [self populateCandidates];
