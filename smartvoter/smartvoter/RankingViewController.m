@@ -25,24 +25,20 @@ NSOrderedSet *set;
     [tblRanking setDataSource:self];
 
     for (Candidate *c in self.candidatesRanking) {
-        NSLog(@"+++++++++++++++++++ %i", c.pointsFromVoter);
+        NSLog(@"+++++++++++++++++++ %i %@", c.pointsFromVoter, c.can_name);
     }
     
 }
 
-//- (int)rowCount {
-//    NSMutableArray *uniqueIndexes = [[NSMutableArray alloc] init];
-//    for (int i = 0; i < self.candidatesRanking.count; i++) {
-//        Candidate *candidate = (Candidate *)[self.candidatesRanking objectAtIndex:i];
-//        [uniqueIndexes addObject:[NSNumber numberWithInt:candidate.pointsFromVoter]];
-//    }
-//    set = [NSOrderedSet orderedSetWithArray:uniqueIndexes];
-//    NSLog(@"aaaaa %i", [[set array] count]);
-//    return [[set array] count];
-//}
-
 - (int)rowCount {
-    return self.candidatesRanking.count;
+    NSMutableArray *uniqueIndexes = [[NSMutableArray alloc] init];
+    for (int i = 0; i < self.candidatesRanking.count; i++) {
+        Candidate *candidate = (Candidate *)[self.candidatesRanking objectAtIndex:i];
+        [uniqueIndexes addObject:[NSNumber numberWithInt:candidate.pointsFromVoter]];
+    }
+    set = [NSOrderedSet orderedSetWithArray:uniqueIndexes];
+    NSLog(@"aaaaa %i %@", [[set array] count], set);
+    return [[set array] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -54,22 +50,33 @@ NSOrderedSet *set;
     NSString *identifier = @"cellIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        }
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
     
-//    for (int i=0; i < self.candidatesRanking.count; i++) {
-        Candidate *candidate = [self.candidatesRanking objectAtIndex:indexPath.row];
-      //  NSString *names = [NSString stringWithFormat:@"%@ %@", cell.textLabel.text, candidate.can_name];
-        
-    NSString *names = [NSString stringWithFormat:@"%@ %d", candidate.can_name, candidate.pointsFromVoter];
-        cell.textLabel.text = names;
-   // }
+    /** safe does not print same values **/
+//    Candidate *candidate = [self.candidatesRanking objectAtIndex:indexPath.row];
+//    NSString *names = [NSString stringWithFormat:@"%@ %d", candidate.can_name, candidate.pointsFromVoter];
+//    cell.textLabel.text = names;
+//    return cell;
     
+    /** print same values on same cell **/
+    
+    NSMutableArray* test1 = [[NSMutableArray alloc] init];
+    
+    for (int i=0; i < self.candidatesRanking.count; i++) {
+        Candidate *candidate = [self.candidatesRanking objectAtIndex:i];
+            NSLog(@"PUGS candidate: %@ %i VS %@ ", candidate.can_name,candidate.pointsFromVoter,  [set objectAtIndex:indexPath.row]);
+            if ([[NSNumber numberWithInt:candidate.pointsFromVoter] integerValue] == [[set objectAtIndex:indexPath.row] integerValue]) {
+                [test1 addObject:[NSString stringWithFormat:@"%@", candidate.can_name]];
+                NSLog(@"pugs %@ may nagtugma! s points", candidate.can_name);
+            }
+    }
+    
+    NSString *combined = [test1 componentsJoinedByString:@","];
+    cell.textLabel.text = combined;
     return cell;
 }
-
-
 
 
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -97,6 +104,35 @@ NSOrderedSet *set;
 //    }
 //    return cell;
 //}
+
+/** backup **/
+
+/*
+- (int)rowCount {
+    return self.candidatesRanking.count;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self rowCount];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSString *identifier = @"cellIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    
+    Candidate *candidate = [self.candidatesRanking objectAtIndex:indexPath.row];
+    
+    NSString *names = [NSString stringWithFormat:@"%@ %d", candidate.can_name, candidate.pointsFromVoter];
+    cell.textLabel.text = names;
+    return cell;
+}
+*/
+
 
 
 @end
