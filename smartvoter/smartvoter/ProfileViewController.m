@@ -17,7 +17,15 @@
     NSLog(@">>>>>>>>>>>>>>>>>>>>> %@",imageName);
     [imageView setImage:[UIImage imageNamed:imageName]];
     
-    NSLog(@">>>>>>>>>>>>>>>>>>>>> %@",self.selectedCandidate.can_name);
+    NSLog(@">>>>>>>>>>>>>>>>>>>>> %@",self.selectedCandidate.can_color);
+    
+    UIView *view = [self.view viewWithTag:777];
+    [view setBackgroundColor:self.selectedCandidate.can_color];
+    
+    UILabel *nameLabel = [self.view viewWithTag:11];
+    [nameLabel setText:self.selectedCandidate.can_name];
+
+    
 }
 
 @end

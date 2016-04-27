@@ -10,6 +10,9 @@
 #import "Candidate.h"
 #import "ProfileViewController.h"
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+
 NSMutableArray *allPres;
 NSMutableArray *allVPres;
 Candidate *selectedCandidate;
@@ -32,58 +35,70 @@ Candidate *selectedCandidate;
     Candidate *binay = [[Candidate alloc] init];
     [binay setCan_id:@"1"];
     [binay setCan_name:@"Jejomar Binay"];
+    [binay setCan_color:UIColorFromRGB(0xE3551D)];
     [allPres addObject:binay];
     
     Candidate *santiago = [[Candidate alloc] init];
     [santiago setCan_id:@"2"];
     [santiago setCan_name:@"Miriam Defensor Santiago"];
+    [santiago setCan_color:UIColorFromRGB(0xB70212)];
     [allPres addObject:santiago];
     
     Candidate *duterte = [[Candidate alloc] init];
     [duterte setCan_id:@"3"];
     [duterte setCan_name:@"Rodrigo Duterte"];
+    [duterte setCan_color:UIColorFromRGB(0x2623B2)];
     [allPres addObject:duterte];
     
     Candidate *poe = [[Candidate alloc] init];
     [poe setCan_id:@"4"];
     [poe setCan_name:@"Grace Poe"];
+    [poe setCan_color:UIColorFromRGB(0x699ED2)];
     [allPres addObject:poe];
     
     Candidate *roxas = [[Candidate alloc] init];
     [roxas setCan_id:@"5"];
     [roxas setCan_name:@"Mar Roxas"];
+    [roxas setCan_color:UIColorFromRGB(0xFEF400)];
     [allPres addObject:roxas];
     
     
     Candidate *cayetano = [[Candidate alloc] init];
     [cayetano setCan_id:@"7"];
     [cayetano setCan_name:@"Allan Peter Cayetano"];
+    [cayetano setCan_color:UIColorFromRGB(0xB70212)];
     [allVPres addObject:cayetano];
     
     Candidate *chiz = [[Candidate alloc] init];
     [chiz setCan_id:@"8"];
     [chiz setCan_name:@"Chiz Escudero"];
+    [chiz setCan_color:UIColorFromRGB(0x699ED2)];
     [allVPres addObject:chiz];
     
     Candidate *honasan = [[Candidate alloc] init];
     [honasan setCan_id:@"9"];
     [honasan setCan_name:@"Gringo Honasan"];
+    [honasan setCan_color:UIColorFromRGB(0xE3551D)];
     [allVPres addObject:honasan];
     
     Candidate *marcos = [[Candidate alloc] init];
     [marcos setCan_id:@"10"];
     [marcos setCan_name:@"Bongbong Marcos"];
+    [marcos setCan_color:UIColorFromRGB(0xB70212)];
     [allVPres addObject:marcos];
     
     Candidate *robredo = [[Candidate alloc] init];
     [robredo setCan_id:@"11"];
     [robredo setCan_name:@"Leni Robredo"];
+    [robredo setCan_color:UIColorFromRGB(0xFEF400)];
     [allVPres addObject:robredo];
     
     Candidate *trillanes = [[Candidate alloc] init];
     [trillanes setCan_id:@"12"];
     [trillanes setCan_name:@"Antonio Trillanes"];
+    [trillanes setCan_color:UIColorFromRGB(0x2623B2)];
     [allVPres addObject:trillanes];
+    
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -121,9 +136,20 @@ Candidate *selectedCandidate;
     
     
     UIImageView *canImgView = (UIImageView *)[cell viewWithTag:771];
+    [canImgView.layer setCornerRadius:30.0f];
+    [canImgView.layer setMasksToBounds:YES];
     NSString *imgName = [NSString stringWithFormat:@"%@-p", candidate.can_id];
     NSLog(@">>>>>>>>>>> %@", imgName);
     canImgView.image = [UIImage imageNamed:imgName];
+    
+    UIView *canNumberView = (UIView *)[cell viewWithTag:1001];
+    [canNumberView.layer setCornerRadius:25.0f];
+    [canNumberView.layer setMasksToBounds:YES];
+    [canNumberView.layer setBorderWidth:2.0f];
+    [canNumberView.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+    
+    UILabel *canNumberLabel = (UILabel *)[cell viewWithTag:9999];
+    [canNumberLabel setText: [NSString stringWithFormat:@"%i", indexPath.row+1]];
     
     return cell;
     
