@@ -1,0 +1,103 @@
+
+api.bilangpilipino.com/api-bilang-pilipino/user/login
+
+
+---->
+
+http://bilangpilipino.com/candidatematchupresult?p=p&c1=3&c2=4#resulttable
+http://2016election.procon.org/2016-election-quiz.php
+http://cnnphilippines.com/news/2016/01/06/philippine-elections-quiz.html
+http://ph.rappler.com/elections/2016/polls
+http://api.bilangpilipino.com/api-bilang-pilipino/user/home
+
+smartvoter
+
+key: NYMv2GnbP
+token: S8HnoazooPgeK77VXeV3Eex7Mygo
+
+
+fb page: fb.com/groups/hacksyon2016
+
+api curls:
+
+*List all issues:
+http://api.bilangpilipino.com/api-bilang-pilipino/api/issues?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+
+*List all candidates:
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/candidates/2016?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+
+*List specific candidate by can_id
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/candidate/year_no/can_id
+
+president:
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/candidate/2016/1?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/candidate/2016/2?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/candidate/2016/3?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/candidate/2016/4?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/candidate/2016/5?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+
+vicepresident:
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/candidate/2016/7?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/candidate/2016/8?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/candidate/2016/9?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/candidate/2016/10?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/candidate/2016/11?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/candidate/2016/12?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+
+*List all candidate stand per issue: 
+http://api.bilangpilipino.com/api-bilang-pilipino/api/soi/can_id
+
+myemail@gmail.com -> pug sa bayan
+
+president:
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/soi/1?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/soi/2?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/soi/3?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/soi/4?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/soi/5?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+
+virepresident:
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/soi/7?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/soi/8?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/soi/9?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/soi/10?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/soi/11?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/soi/12?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+
+
+
+*List all trail of a candidate by {can_id}, this results are applicable only for 2016 datasets.
+http://api.bilangpilipino.com/api-bilang-pilipino/api/campaign-trail/can_id
+
+curl http://api.bilangpilipino.com/api-bilang-pilipino/api/campaign-trail/1?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+
+https://github.com/geric/smartvoter
+
+http://api.bilangpilipino.com/api-bilang-pilipino/api/issues?key=NYMv2GnbP&token=S8HnoazooPgeK77VXeV3Eex7Mygo
+
+
+========================================TEST DATA============================
+//    NSArray *duterteStance =        @[@2, @2, @2, @1, @2, @2, @2, @1];
+//
+//    NSArray *eliTrueStance =        @[@2, @2, @0, @0, @2, @0, @2, @2];
+//    
+//    NSArray *eliNoStance =          @[@0, @0, @0, @0, @0, @0, @0, @0];
+//    NSArray *eliDisagreeAllStance = @[@1, @1, @1, @1, @1, @1, @1, @1];
+//    NSArray *eliAgreeAllStance =    @[@2, @2, @2, @2, @2, @2, @2, @2];
+
+//    NSLog(@">>>>>>>>>>>>>>>>>>>>>>>>>>> points ni binay vs sayo %i", [self matchYourStance:eliAgreeAllStance ToCandidateStance:binayStance]);
+//    NSLog(@">>>>>>>>>>>>>>>>>>>>>>>>>>> points ni duterte vs sayo %i", [self matchYourStance:eliAgreeAllStance ToCandidateStance:duterteStance]);
+=============================================================================
+
+5 is what % of 100 = (5/100) * 100 = 5%
+16 is what % of 21 = 76%
+
+binay: #E3551D ; rgb(227,85,29)
+santiago: #B70212 ; rgb(183,2,18)
+duterte: #2623B2 ; rgb(38,35,178)
+poe: #699ED2 ; rgb(105,158,210)
+mar: #FEF400 ; rgb(254,244,0)
+
+http://shrib.com/pugvoter2016
+http://www.materialui.co/colors
+
